@@ -66,7 +66,7 @@ This work was done using the FOOOF package (previous to new edition SpecParam) u
 
 Power spectral density (PSD) was calculated separately for each participant and electrode, corresponding to the left and right DLPFC (Right: F4, F6, F8; Left: F3, F5, F7), across the continuous resting state EEG using Welch’s method implemented in MATLAB (2 s Hamming window, 50% overlap). The Fitting Oscillations and One Over f (FOOOF) python toolbox (version 1.0.0; https://fooof-tools.github.io/fooof/), now known as Spectral Parametrization (specparam), was used to characterize the PSD as a combination of an aperiodic component with overlying period components, or oscillations (Donoghue et al., 2020a). Oscillations were characterized as frequency regions with power above the aperiodic component, modeled as a Gaussian, and are referred to as ‘peaks’. The aperiodic component was extracted from the 1–50 Hz frequency range of each power spectrum (aperiodic_mode = ‘fixed’, peak_width_limits = [0.5, 12], min _peak_height = 0, peak_threshold = 2, max _n_peaks = 4, default settings otherwise). We used the ‘fixed’ setting as we did not expect a “knee” in the power spectrum. This assumption was supported upon visual inspection of each PSD.
 
-![FOOOF methods image](images/fooofMethods.png)
+![FOOOF methods image](./fooofMethods.png)
 
 <br> 
 
