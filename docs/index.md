@@ -1,4 +1,5 @@
 <br>
+<br>
 
 # Aperiodic EEG and 7T MRSI evidence for maturation of E/I balance supporting the development of working memory through adolescence
 
@@ -20,7 +21,7 @@ Published in Developmental Cognitive Neuroscience (2024) as [Aperiodic EEG and 7
 LNCD 7T
 
 ### Github Repository
-https://github.com/LabNeuroCogDevel/7T_EEG/tree/main/Aperiodic_MRS_Development
+https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development
 
 ## Code Documentation
 **Preprocessing:**
