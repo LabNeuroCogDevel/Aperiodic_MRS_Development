@@ -26,7 +26,7 @@ https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development
 ## Code Documentation
 **Preprocessing:**
 
-Preprocessing can be run using [01_Aperiodic_Preprocessing.sh](/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/01_Aperiodic_Preprocessing.sh)
+Preprocessing can be run using [01_Aperiodic_Preprocessing.sh](/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/01_Aperiodic_Preprocessing.sh)
 
   ```matlab -nodesktop -r "addpath(genpath('../Preprocessing_Functions/')); run_preprocessing_pipeline('Resting_State')" ```
   
@@ -58,7 +58,7 @@ Preprocessing can be run using [01_Aperiodic_Preprocessing.sh](/LabNeuroCogDevel
 
 **Calculate the Aperiodic Activity**
 
-This work was done using the FOOOF package (previous to new edition SpecParam) using [02_runFOOOF.py](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/02_runFOOOF.py) using the following parameters: <br>
+This work was done using the FOOOF package (previous to new edition SpecParam) using [02_runFOOOF.py](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/02_runFOOOF.py) using the following parameters: <br>
 * For compute_psd ```(method='welch', fmin=1, fmax=50, tmin=0, tmax=None, picks='all', n_fft=256, n_overlap=128, window='hamming')``` 
 * For FOOOFGroup ```peak_width_limits=[0.5, 12], min_peak_height=0, peak_threshold=2, aperiodic_mode='fixed', max_n_peaks=4, verbose=False```
 * Frequency range to fit [1, 50]
@@ -72,21 +72,21 @@ Power spectral density (PSD) was calculated separately for each participant and 
 
 **Extract Aperiodic Measures from Individual Files**
 
-[03_ExtractFOOOFmeasures.py](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/03_ExtractFOOOFmeasures.py) will load in each individual persons npz files and select the desired measures (exponent, offset, error and/or peak information) and save out one csv file with all subject, all channel information. This information is then loaded into merge7T by Will Foran
+[03_ExtractFOOOFmeasures.py](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/03_ExtractFOOOFmeasures.py) will load in each individual persons npz files and select the desired measures (exponent, offset, error and/or peak information) and save out one csv file with all subject, all channel information. This information is then loaded into merge7T by Will Foran
 
 <br>
 
 **Create Dataframes for Paper Analyses** 
 
-[04_CreateFOOOFdataframes.R](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/04_CreateFOOOFdataframes.R) loads in the merge7T file and extracts out the wanted ages, fooof info, behavioral, and MRS measures that will be used to create figures and statistics for publication. Note, MRS and behavioral measures were previously calculated for these participants. 
+[04_CreateFOOOFdataframes.R](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/04_CreateFOOOFdataframes.R) loads in the merge7T file and extracts out the wanted ages, fooof info, behavioral, and MRS measures that will be used to create figures and statistics for publication. Note, MRS and behavioral measures were previously calculated for these participants. 
 
 <br>
 
 **Figures and Statistics**
 
-[05_RunStatistics.R](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/05_RunStatistics.R)
+[05_RunStatistics.R](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/05_RunStatistics.R)
 
-[06_FOOOFMRSPaperFigs.Rmd](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/Aperiodic_MRS_Development/06_FOOOFMRSPaperFigs.Rmd) 
+[06_FOOOFMRSPaperFigs.Rmd](https://github.com/LabNeuroCogDevel/Aperiodic_MRS_Development/blob/main/06_FOOOFMRSPaperFigs.Rmd) 
 
 To assess developmental trajectories of aperiodic activity, we implemented GAMMs on aperiodic parameter (exponent and offset), including random intercepts estimated for each participant. Regression splines were implemented (4 degrees of freedom) to assess linear and non-linear effects (Wood, 2017, Wood, 2013). We first tested for a main effect of age on aperiodic parameter while controlling for hemisphere (either ‘right’ or ‘left’ DLPFC) and condition (eyes open or eyes closed during resting state). We additionally tested for age-by-hemisphere interactions while controlling for condition, and age-by-condition interactions while controlling for region. Correlations between the exponent and the offset, for both the eyes open and eyes closed conditions were calculated using Pearson correlations.
 
